@@ -5,11 +5,10 @@ import studentstable.Students;
 import java.sql.*;
 
 public class ConnectionToInMemDB {
-    private static final String DB_URL = "jdbc:h2:mem:test";
-    private static final String DB_DRIVER = "org.h2.Driver";
-
     static final String USER = "admin";
     static final String PASS = "admin";
+    private static final String DB_URL = "jdbc:h2:mem:test";
+    private static final String DB_DRIVER = "org.h2.Driver";
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(DB_URL, USER, PASS);
@@ -42,6 +41,7 @@ public class ConnectionToInMemDB {
         Students.countStudents(stmt);
         Students.groupByName(stmt);
         Students.deleteByAge(stmt);
+        Students.selectFromTableAfterDeleting(stmt);
         try {
             stmt.close();
         } catch (SQLException ignored) {

@@ -10,6 +10,9 @@ public class Students {
     private static final String NAME = "first_name";
     private static final String PRE_NAME = "last_name";
 
+    private Students() {
+    }
+
     public static void insertToTable(Statement stmt) throws SQLException {
         String sql = INSERT + "VALUES (1, 'Danylo', 'Yurchyk', 26, 'Lviv')";
         stmt.execute(sql);
@@ -101,6 +104,18 @@ public class Students {
         stmt.executeUpdate(sql);
     }
 
-    private Students() {
+    public static void selectFromTableAfterDeleting(Statement stmt) throws SQLException {
+        String sql = "SELECT id, first_name, last_name, age, city FROM Students";
+        ResultSet rs = stmt.executeQuery(sql);
+        System.out.print("\n" + "List of Students which age is more than 45 and less than 20: " + "\n");
+        while (rs.next()) {
+            int id = rs.getInt("id");
+            String firstName = rs.getString(NAME);
+            String lastName = rs.getString(PRE_NAME);
+            int age = rs.getInt("age");
+            String city = rs.getString("city");
+            System.out.print("Id: " + id + "First name: " + firstName +
+                    " Last name: " + lastName + " Age: " + age + " City: " + city + "\n");
+        }
     }
 }
