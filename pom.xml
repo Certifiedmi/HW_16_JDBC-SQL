@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>Team-o-InternetShop</artifactId>
+    <artifactId>HW_16_JDBC_SQL</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
