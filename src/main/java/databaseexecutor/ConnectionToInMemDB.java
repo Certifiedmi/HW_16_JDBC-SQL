@@ -4,9 +4,9 @@ import studentstable.Students;
 
 import java.sql.*;
 
-public class ConnectionToDB {
-    public static final String DB_URL = "jdbc:h2:mem:test";
-    public static final String DB_DRIVER = "org.h2.Driver";
+public class ConnectionToInMemDB {
+    private static final String DB_URL = "jdbc:h2:mem:test";
+    private static final String DB_DRIVER = "org.h2.Driver";
 
     static final String USER = "admin";
     static final String PASS = "admin";
@@ -66,10 +66,10 @@ public class ConnectionToDB {
 
     public void executor() {
         try {
-            ConnectionToDB.getConnection();
-            ConnectionToDB.connectionToDB();
-            ConnectionToDB.createTable();
-            ConnectionToDB.testGetTable();
+            ConnectionToInMemDB.getConnection();
+            ConnectionToInMemDB.connectionToDB();
+            ConnectionToInMemDB.createTable();
+            ConnectionToInMemDB.testGetTable();
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("SQL Error");
