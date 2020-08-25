@@ -1,6 +1,6 @@
-package databaseexecutor;
+package com.yurchyk.databaseexecutor;
 
-import studentstable.Students;
+import com.yurchyk.studentstable.Students;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

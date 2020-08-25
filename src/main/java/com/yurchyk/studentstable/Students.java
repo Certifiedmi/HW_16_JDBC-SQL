@@ -1,4 +1,4 @@
-package studentstable;
+package com.yurchyk.studentstable;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

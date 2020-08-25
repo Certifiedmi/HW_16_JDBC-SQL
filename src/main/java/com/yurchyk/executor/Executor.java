@@ -1,7 +1,7 @@
-package executor;
+package com.yurchyk.executor;
 
-import databaseexecutor.ConnectionToInMemDB;
-import databaseexecutor.ConnectionToMysqlDB;
+import com.yurchyk.databaseexecutor.ConnectionToInMemDB;
+import com.yurchyk.databaseexecutor.ConnectionToMysqlDB;
 
 import java.sql.SQLException;
 
